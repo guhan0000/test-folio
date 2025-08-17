@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guhan Muthuramalingam | IT Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Guhan Muthuramalingam – Java & SQL developer with interests in OOP, DBMS and Full‑Stack Development."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --panel: #121822;
+        --soft: #1b2533;
+        --text: #e6edf3;
+        --muted: #97a3b6;
+        --brand: #7c9cff;
+        --brand-2: #00d1b2;
+        --accent: #f0b429;
+        --ok: #5ad67d;
+        --danger: #ef7a7a;
+        --radius: 18px;
+        --shadow: 0 6px 24px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.25);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          sans-serif;
+        background: linear-gradient(180deg, var(--bg), #0f1520 120%);
+        color: var(--text);
+      }
+      a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: 1100px;
+        margin-inline: auto;
+        padding: 0 20px;
+      }
+      /* Header */
+      header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: saturate(140%) blur(8px);
+        background: rgba(11, 15, 20, 0.6);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        z-index: 50;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: radial-gradient(
+            120% 120% at 20% 20%,
+            var(--brand) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            120% 120% at 80% 80%,
+            var(--brand-2) 0%,
+            transparent 60%
+          ),
+          var(--soft);
+        box-shadow: var(--shadow);
+      }
+      .brand h1 {
+        font-size: 18px;
+        margin: 0;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      nav ul {
+        display: flex;
+        gap: 18px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav a {
+        padding: 8px 12px;
+        border-radius: 10px;
+      }
+      nav a:hover {
+        background: rgba(124, 156, 255, 0.12);
+        text-decoration: none;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 64px 0 28px;
+      }
+      .hero .wrap {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 30px;
+      }
+      .card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.04),
+          rgba(255, 255, 255, 0.02)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .card.pad {
+        padding: 28px;
+      }
+      .title {
+        font-size: 40px;
+        line-height: 1.1;
+        margin: 0 0 10px;
+      }
+      .subtitle {
+        color: var(--muted);
+        font-weight: 500;
+        margin: 0 0 16px;
+      }
+      .pillrow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 16px 0 24px;
+      }
+      .pill {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: #0f1724;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 13px;
+      }
+      .cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: var(--panel);
+        color: var(--text);
+        font-weight: 600;
+      }
+      .btn.primary {
+        background: linear-gradient(
+          90deg,
+          var(--brand) 0%,
+          var(--brand-2) 100%
+        );
+        color: #0b0f14;
+        border: none;
+      }
+      .btn:hover {
+        filter: brightness(1.05);
+        text-decoration: none;
+      }
+      .contact {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .contact a {
+        color: var(--text);
+      }
+
+      /* Sections */
+      section {
+        padding: 26px 0;
+      }
+      .section-title {
+        font-size: 22px;
+        font-weight: 800;
+        margin: 0 0 14px;
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+      .grid.two {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .grid.three {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .item {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.02)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 16px;
+        padding: 18px;
+      }
+      .item h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+      }
+      .item p {
+        margin: 6px 0 0;
+        color: var(--muted);
+      }
+      .tagrow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+      }
+      .tag {
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #0c1320;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      /* Timeline */
+      .timeline {
+        position: relative;
+        padding-left: 18px;
+      }
+      .timeline:before {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 4px;
+        bottom: 4px;
+        width: 2px;
+        background: linear-gradient(var(--brand), transparent);
+      }
+      .t-item {
+        position: relative;
+        padding-left: 14px;
+        margin: 0 0 14px;
+      }
+      .t-item:before {
+        content: "";
+        position: absolute;
+        left: -2px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--brand);
+        box-shadow: 0 0 0 3px rgba(124, 156, 255, 0.25);
+      }
+      .t-item h4 {
+        margin: 0 0 4px;
+        font-size: 16px;
+      }
+      .t-item .meta {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* Footer */
+      footer {
+        padding: 24px 0 60px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      /* Responsive */
+      @media (max-width: 960px) {
+        .hero .wrap {
+          grid-template-columns: 1fr;
+        }
+        .grid.two,
+        .grid.three {
+          grid-template-columns: 1fr;
+        }
+        .contact {
+          grid-template-columns: 1fr;
+        }
+        .title {
+          font-size: 34px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <!-- <div class="logo" aria-hidden="true"></div> -->
+          <h1>Guhan Muthuramalingam</h1>
+        </div>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container wrap">
+          <div class="card pad">
+            <h2 class="title">Java & SQL Developer</h2>
+            <p class="subtitle">
+              Focused on Object‑Oriented Programming, Database Management
+              Systems and Full‑Stack development.
+            </p>
+            <div class="pillrow" aria-label="Key skills">
+              <span class="pill">Java</span>
+              <span class="pill">SQL</span>
+              <span class="pill">HTML</span>
+              <span class="pill">CSS</span>
+              <span class="pill">MySQL</span>
+              <span class="pill">Git & GitHub</span>
+            </div>
+            <div class="cta">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a
+                class="btn"
+                href="https://www.linkedin.com/in/guhan-m-il69/"
+                rel="noopener"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a
+                class="btn"
+                href="https://github.com/guhan0000"
+                rel="noopener"
+                target="_blank"
+                >GitHub</a
+              >
+            </div>
+          </div>
+          <aside class="card pad">
+            <h3 style="margin: 0 0 10px">Chennai, India</h3>
+            <div class="contact">
+              <div>
+                📧
+                <a href="mailto:guhanm0000@gmail.com">guhanm0000@gmail.com</a>
+              </div>
+              <div>📞 <a href="tel:+917708904986">+91 7708904986</a></div>
+              <div>
+                🔗
+                <a
+                  href="https://www.hackerrank.com/profile/guhanm0000"
+                  target="_blank"
+                  rel="noopener"
+                  >HackerRank</a
+                >
+              </div>
+              <div>
+                💼
+                <a
+                  href="https://www.linkedin.com/in/guhan-m-il69/"
+                  target="_blank"
+                  rel="noopener"
+                  >linkedin.com/guhanm</a
+                >
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <div class="container">
+          <h2 class="section-title">About</h2>
+          <div class="item">
+            <p>
+              I'm an entry‑level developer with hands‑on experience in Java, SQL
+              and web fundamentals. I enjoy building clean, reliable software
+              and I’m actively exploring full‑stack development. I'm quick to
+              learn and value clear communication and logical thinking.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <div class="container">
+          <h2 class="section-title">Skills</h2>
+          <div class="grid three">
+            <div class="item">
+              <h3>Programming</h3>
+              <p>Java, SQL <span class="tag">Familiar: Python</span></p>
+              <div class="tagrow">
+                <span class="tag">OOP</span>
+                <span class="tag">JDBC</span>
+                <span class="tag">Data Structures</span>
+              </div>
+            </div>
+            <div class="item">
+              <h3>Web</h3>
+              <p>HTML, CSS, Bootstrap, JavaScript</p>
+              <div class="tagrow">
+                <span class="tag">Responsive UI</span>
+                <span class="tag">Accessibility</span>
+                <span class="tag">Semantic HTML</span>
+              </div>
+            </div>
+            <div class="item">
+              <h3>Database</h3>
+              <p>MySQL</p>
+              <div class="tagrow">
+                <span class="tag">Schema Design</span>
+                <span class="tag">Queries</span>
+                <span class="tag">Normalization</span>
+              </div>
+            </div>
+            <div class="item">
+              <h3>Tools</h3>
+              <p>Eclipse, VS Code, Git & GitHub</p>
+            </div>
+            <div class="item">
+              <h3>Operating Systems</h3>
+              <p>Windows</p>
+              <p>Linux</p>
+            </div>
+            <div class="item">
+              <h3>Soft Skills</h3>
+              <p>Willingness to learn, Communication, Logical Thinking</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience">
+        <div class="container">
+          <h2 class="section-title">Experience</h2>
+          <div class="timeline">
+            <div class="t-item item">
+              <h4>Jr Research Assistant — Aggregate Intelligence</h4>
+              <div class="meta">Oct 2024 – May 2025</div>
+              <ul>
+                <li>
+                  Collected and verified data for Northern California High
+                  Technology Directory and Gift, Housewares & Home Textile
+                  Buyers directory.
+                </li>
+                <li>
+                  Collaborated with cross‑functional teams to hit project goals
+                  and improve communication.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="grid two">
+            <article class="item">
+              <h3>Inventory Management System</h3>
+              <p>
+                Web application for managing store inventory (stock updates,
+                product management).
+              </p>
+              <div class="tagrow">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <p>
+                <a
+                  href="https://github.com/guhan0000/Inventory_mgmnt_system"
+                  target="_blank"
+                  rel="noopener"
+                  >Source Code →</a
+                >
+              </p>
+            </article>
+            <article class="item">
+              <h3>Student Result System</h3>
+              <p>
+                Console app that authenticates students and displays results and
+                total score using JDBC.
+              </p>
+              <div class="tagrow">
+                <span class="tag">Java</span>
+                <span class="tag">JDBC</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <p>
+                <a
+                  href="https://github.com/guhan0000/StudentResultJDBC"
+                  target="_blank"
+                  rel="noopener"
+                  >Source Code →</a
+                >
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education">
+        <div class="container">
+          <h2 class="section-title">Education</h2>
+          <div class="grid two">
+            <div class="item">
+              <h3>Saranathan College of Engineering, Trichy</h3>
+              <p>B.E. in Computer Science and Engineering (2024) — CGPA: 8.2</p>
+            </div>
+            <div class="item">
+              <h3>Ideal Matric School</h3>
+              <p>HSC (2020) — 91.83%<br />SSLC (2018) — 91.80%</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications & Languages -->
+      <section>
+        <div class="container grid two">
+          <div>
+            <h2 class="section-title">Certifications</h2>
+            <div class="item">
+              <ul>
+                <li>Java Programming — Greens Technologies</li>
+                <li>SQL (Intermediate) — HackerRank</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h2 class="section-title">Languages</h2>
+            <div class="item">
+              <p>English, Tamil</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements -->
+      <section id="achievements">
+        <div class="container">
+          <h2 class="section-title">Achievements</h2>
+          <div class="item">
+            <ul>
+              <li>3rd in school in XII Examination with 91.8%.</li>
+              <li>Best academic performance award (Grade VI to XII).</li>
+              <li>4‑star silver badge in Java & SQL on HackerRank.</li>
+              <li>
+                Runner‑up in coding competition at Saranathan Engineering
+                College.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <div class="grid two">
+            <div class="item">
+              <p>
+                If you'd like to collaborate or have an opportunity that fits my
+                profile, feel free to reach out. I’ll get back to you as soon as
+                I can.
+              </p>
+              <p>
+                📧 <a href="mailto:guhanm0000@gmail.com">guhanm0000@gmail.com</a
+                ><br />
+                📞 <a href="tel:+917708904986">+91 7708904986</a>
+              </p>
+            </div>
+            <div class="item">
+              <p>Profiles:</p>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/guhan-m-il69/"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >
+                ·
+                <a
+                  href="https://github.com/guhan0000"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+                ·
+                <a
+                  href="https://www.hackerrank.com/profile/guhanm0000"
+                  target="_blank"
+                  rel="noopener"
+                  >HackerRank</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        © <span id="y">2025</span> Guhan Muthuramalingam · Built with HTML & CSS
+      </div>
+    </footer>
+  </body>
+</html>
