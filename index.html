@@ -2,651 +2,627 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <title>Guhan Muthuramalingam | IT Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of Guhan Muthuramalingam – Java & SQL developer with interests in OOP, DBMS and Full‑Stack Development."
+      content="Portfolio of Guhan Muthuramalingam – Java & SQL developer with interests in OOP, DBMS and Full-Stack Development."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
     <style>
       :root {
-        --bg: #0b0f14;
-        --panel: #121822;
-        --soft: #1b2533;
-        --text: #e6edf3;
-        --muted: #97a3b6;
-        --brand: #7c9cff;
-        --brand-2: #00d1b2;
-        --accent: #f0b429;
-        --ok: #5ad67d;
-        --danger: #ef7a7a;
-        --radius: 18px;
-        --shadow: 0 6px 24px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.25);
+        --bg: #f5f7fb;
       }
+
       * {
-        box-sizing: border-box;
-      }
-      html {
         scroll-behavior: smooth;
       }
+
       body {
-        margin: 0;
-        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
-          sans-serif;
-        background: linear-gradient(180deg, var(--bg), #0f1520 120%);
-        color: var(--text);
-      }
-      a {
-        color: var(--brand);
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      .container {
-        max-width: 1100px;
-        margin-inline: auto;
-        padding: 0 20px;
-      }
-      /* Header */
-      header {
-        position: sticky;
-        top: 0;
-        backdrop-filter: saturate(140%) blur(8px);
-        background: rgba(11, 15, 20, 0.6);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        z-index: 50;
-      }
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 14px 0;
-      }
-      .brand {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-      }
-      .logo {
-        width: 36px;
-        height: 36px;
-        border-radius: 10px;
-        background: radial-gradient(
-            120% 120% at 20% 20%,
-            var(--brand) 0%,
-            transparent 60%
-          ),
-          radial-gradient(
-            120% 120% at 80% 80%,
-            var(--brand-2) 0%,
-            transparent 60%
-          ),
-          var(--soft);
-        box-shadow: var(--shadow);
-      }
-      .brand h1 {
-        font-size: 18px;
-        margin: 0;
-        font-weight: 700;
-        letter-spacing: 0.2px;
-      }
-      nav ul {
-        display: flex;
-        gap: 18px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      nav a {
-        padding: 8px 12px;
-        border-radius: 10px;
-      }
-      nav a:hover {
-        background: rgba(124, 156, 255, 0.12);
-        text-decoration: none;
+        background-color: var(--bg);
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          Arial, sans-serif;
       }
 
-      /* Hero */
-      .hero {
-        padding: 64px 0 28px;
-      }
-      .hero .wrap {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 30px;
-      }
-      .card {
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.04),
-          rgba(255, 255, 255, 0.02)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-      }
-      .card.pad {
-        padding: 28px;
-      }
-      .title {
-        font-size: 40px;
-        line-height: 1.1;
-        margin: 0 0 10px;
-      }
-      .subtitle {
-        color: var(--muted);
-        font-weight: 500;
-        margin: 0 0 16px;
-      }
-      .pillrow {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin: 16px 0 24px;
-      }
-      .pill {
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: #0f1724;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        font-size: 13px;
-      }
-      .cta {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 12px 16px;
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: var(--panel);
-        color: var(--text);
-        font-weight: 600;
-      }
-      .btn.primary {
-        background: linear-gradient(
-          90deg,
-          var(--brand) 0%,
-          var(--brand-2) 100%
-        );
-        color: #0b0f14;
-        border: none;
-      }
-      .btn:hover {
-        filter: brightness(1.05);
-        text-decoration: none;
-      }
-      .contact {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        font-size: 14px;
-        color: var(--muted);
-      }
-      .contact a {
-        color: var(--text);
+      .hero-section {
+        padding: 4rem 0 2.5rem;
       }
 
-      /* Sections */
-      section {
-        padding: 26px 0;
-      }
       .section-title {
-        font-size: 22px;
         font-weight: 800;
-        margin: 0 0 14px;
-      }
-      .grid {
-        display: grid;
-        gap: 16px;
-      }
-      .grid.two {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .grid.three {
-        grid-template-columns: repeat(3, 1fr);
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
       }
 
-      .item {
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.03),
-          rgba(255, 255, 255, 0.02)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 16px;
-        padding: 18px;
-      }
-      .item h3 {
-        margin: 0 0 6px;
-        font-size: 16px;
-      }
-      .item p {
-        margin: 6px 0 0;
-        color: var(--muted);
-      }
-      .tagrow {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-top: 10px;
-      }
-      .tag {
-        font-size: 12px;
-        padding: 6px 10px;
+      .pill {
+        display: inline-block;
+        padding: 0.35rem 0.75rem;
         border-radius: 999px;
-        background: #0c1320;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background-color: #e5edff;
+        color: #1f2937;
+        font-size: 0.8rem;
+        margin: 0.2rem;
       }
 
-      /* Timeline */
-      .timeline {
-        position: relative;
-        padding-left: 18px;
+      .navbar-blur {
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.25);
       }
-      .timeline:before {
-        content: "";
-        position: absolute;
-        left: 6px;
-        top: 4px;
-        bottom: 4px;
-        width: 2px;
-        background: linear-gradient(var(--brand), transparent);
-      }
-      .t-item {
-        position: relative;
-        padding-left: 14px;
-        margin: 0 0 14px;
-      }
-      .t-item:before {
-        content: "";
-        position: absolute;
-        left: -2px;
-        top: 6px;
+
+      .timeline-dot {
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: var(--brand);
-        box-shadow: 0 0 0 3px rgba(124, 156, 255, 0.25);
-      }
-      .t-item h4 {
-        margin: 0 0 4px;
-        font-size: 16px;
-      }
-      .t-item .meta {
-        color: var(--muted);
-        font-size: 13px;
+        background-color: #0d6efd;
+        box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.25);
+        margin-right: 0.75rem;
+        margin-top: 0.3rem;
       }
 
-      /* Footer */
+      .timeline-line {
+        border-left: 2px solid rgba(148, 163, 184, 0.5);
+        margin-left: 4px;
+        padding-left: 1rem;
+      }
+
       footer {
-        padding: 24px 0 60px;
-        color: var(--muted);
-        text-align: center;
+        padding: 2rem 0 3rem;
+        font-size: 0.9rem;
+        color: #6b7280;
       }
 
-      /* Responsive */
-      @media (max-width: 960px) {
-        .hero .wrap {
-          grid-template-columns: 1fr;
-        }
-        .grid.two,
-        .grid.three {
-          grid-template-columns: 1fr;
-        }
-        .contact {
-          grid-template-columns: 1fr;
-        }
-        .title {
-          font-size: 34px;
+      @media (max-width: 991.98px) {
+        .navbar-nav .nav-link {
+          padding-left: 0.25rem;
         }
       }
     </style>
   </head>
   <body>
-    <header>
-      <div class="container nav">
-        <div class="brand">
-          <!-- <div class="logo" aria-hidden="true"></div> -->
-          <h1>Guhan Muthuramalingam</h1>
-        </div>
-        <nav aria-label="Primary">
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-blur">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="#">
+          Guhan Muthuramalingam
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-medium">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#achievements">Achievements</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
           </ul>
-        </nav>
+        </div>
       </div>
-    </header>
+    </nav>
 
     <main>
       <!-- Hero -->
-      <section class="hero">
-        <div class="container wrap">
-          <div class="card pad">
-            <h2 class="title">Java & SQL Developer</h2>
-            <p class="subtitle">
-              Focused on Object‑Oriented Programming, Database Management
-              Systems and Full‑Stack development.
-            </p>
-            <div class="pillrow" aria-label="Key skills">
-              <span class="pill">Java</span>
-              <span class="pill">SQL</span>
-              <span class="pill">HTML</span>
-              <span class="pill">CSS</span>
-              <span class="pill">MySQL</span>
-              <span class="pill">Git & GitHub</span>
+      <section class="hero-section">
+        <div class="container">
+          <div class="row g-4 align-items-stretch">
+            <!-- Left: intro card -->
+            <div class="col-lg-8">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4 p-md-5">
+                  <h2 class="display-6 fw-bold mb-2">
+                    Java &amp; SQL Developer
+                  </h2>
+                  <p class="text-muted mb-3">
+                    Focused on Object-Oriented Programming, Database Management
+                    Systems and Full-Stack development.
+                  </p>
+
+                  <div class="mb-3">
+                    <span class="pill">Java</span>
+                    <span class="pill">SQL</span>
+                    <span class="pill">HTML</span>
+                    <span class="pill">CSS</span>
+                    <span class="pill">MySQL</span>
+                    <span class="pill">Git &amp; GitHub</span>
+                  </div>
+
+                  <div class="d-flex flex-wrap gap-2">
+                    <a href="#projects" class="btn btn-primary btn-sm px-3">
+                      View Projects
+                    </a>
+                    <a
+                      class="btn btn-outline-secondary btn-sm px-3"
+                      href="https://www.linkedin.com/in/guhan-m-il69/"
+                      rel="noopener"
+                      target="_blank"
+                    >
+                      LinkedIn
+                    </a>
+                    <a
+                      class="btn btn-outline-secondary btn-sm px-3"
+                      href="https://github.com/guhan0000"
+                      rel="noopener"
+                      target="_blank"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="cta">
-              <a class="btn primary" href="#projects">View Projects</a>
-              <a
-                class="btn"
-                href="https://www.linkedin.com/in/guhan-m-il69/"
-                rel="noopener"
-                target="_blank"
-                >LinkedIn</a
-              >
-              <a
-                class="btn"
-                href="https://github.com/guhan0000"
-                rel="noopener"
-                target="_blank"
-                >GitHub</a
-              >
+
+            <!-- Right: contact card -->
+            <div class="col-lg-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                  <h5 class="card-title mb-3">Chennai, India</h5>
+                  <div class="small text-muted">
+                    <div class="mb-2">
+                      📧
+                      <a href="mailto:guhanm0000@gmail.com"
+                        >guhanm0000@gmail.com</a
+                      >
+                    </div>
+                    <div class="mb-2">
+                      📞
+                      <a href="tel:+917708904986">+91 7708904986</a>
+                    </div>
+                    <div class="mb-2">
+                      🔗
+                      <a
+                        href="https://www.hackerrank.com/profile/guhanm0000"
+                        target="_blank"
+                        rel="noopener"
+                        >HackerRank</a
+                      >
+                    </div>
+                    <div class="mb-2">
+                      💼
+                      <a
+                        href="https://www.linkedin.com/in/guhan-m-il69/"
+                        target="_blank"
+                        rel="noopener"
+                        >linkedin.com/guhanm</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <aside class="card pad">
-            <h3 style="margin: 0 0 10px">Chennai, India</h3>
-            <div class="contact">
-              <div>
-                📧
-                <a href="mailto:guhanm0000@gmail.com">guhanm0000@gmail.com</a>
-              </div>
-              <div>📞 <a href="tel:+917708904986">+91 7708904986</a></div>
-              <div>
-                🔗
-                <a
-                  href="https://www.hackerrank.com/profile/guhanm0000"
-                  target="_blank"
-                  rel="noopener"
-                  >HackerRank</a
-                >
-              </div>
-              <div>
-                💼
-                <a
-                  href="https://www.linkedin.com/in/guhan-m-il69/"
-                  target="_blank"
-                  rel="noopener"
-                  >linkedin.com/guhanm</a
-                >
-              </div>
-            </div>
-          </aside>
         </div>
       </section>
 
       <!-- About -->
-      <section id="about">
+      <section id="about" class="py-3">
         <div class="container">
           <h2 class="section-title">About</h2>
-          <div class="item">
-            <p>
-              I'm an entry‑level developer with hands‑on experience in Java, SQL
-              and web fundamentals. I enjoy building clean, reliable software
-              and I’m actively exploring full‑stack development. I'm quick to
-              learn and value clear communication and logical thinking.
-            </p>
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <p class="mb-0">
+                I'm an entry-level developer with hands-on experience in Java,
+                SQL and web fundamentals. I enjoy building clean, reliable
+                software and I’m actively exploring full-stack development. I'm
+                quick to learn and value clear communication and logical
+                thinking.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Skills -->
-      <section id="skills">
+      <section id="skills" class="py-3">
         <div class="container">
           <h2 class="section-title">Skills</h2>
-          <div class="grid three">
-            <div class="item">
-              <h3>Programming</h3>
-              <p>Java, SQL <span class="tag">Familiar: Python</span></p>
-              <div class="tagrow">
-                <span class="tag">OOP</span>
-                <span class="tag">JDBC</span>
-                <span class="tag">Data Structures</span>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Programming</h5>
+                  <p class="mb-1">
+                    Java, SQL
+                    <span class="badge bg-light text-dark border ms-1"
+                      >Familiar: Python</span
+                    >
+                  </p>
+                  <div class="small text-muted">
+                    OOP · JDBC · Data Structures
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="item">
-              <h3>Web</h3>
-              <p>HTML, CSS, Bootstrap, JavaScript</p>
-              <div class="tagrow">
-                <span class="tag">Responsive UI</span>
-                <span class="tag">Accessibility</span>
-                <span class="tag">Semantic HTML</span>
+
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Web</h5>
+                  <p class="mb-1">HTML, CSS, Bootstrap, JavaScript</p>
+                  <div class="small text-muted">
+                    Responsive UI · Accessibility · Semantic HTML
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="item">
-              <h3>Database</h3>
-              <p>MySQL</p>
-              <div class="tagrow">
-                <span class="tag">Schema Design</span>
-                <span class="tag">Queries</span>
-                <span class="tag">Normalization</span>
+
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Database</h5>
+                  <p class="mb-1">MySQL</p>
+                  <div class="small text-muted">
+                    Schema Design · Queries · Normalization
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="item">
-              <h3>Tools</h3>
-              <p>Eclipse, VS Code, Git & GitHub</p>
+
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Tools</h5>
+                  <p class="mb-0">Eclipse, VS Code, Git &amp; GitHub</p>
+                </div>
+              </div>
             </div>
-            <div class="item">
-              <h3>Operating Systems</h3>
-              <p>Windows</p>
-              <p>Linux</p>
+
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Operating Systems</h5>
+                  <p class="mb-0">Windows, Linux</p>
+                </div>
+              </div>
             </div>
-            <div class="item">
-              <h3>Soft Skills</h3>
-              <p>Willingness to learn, Communication, Logical Thinking</p>
+
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Soft Skills</h5>
+                  <p class="mb-0">
+                    Willingness to learn, Communication, Logical Thinking
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Experience -->
-      <section id="experience">
+      <section id="experience" class="py-3">
         <div class="container">
           <h2 class="section-title">Experience</h2>
-          <div class="timeline">
-            <div class="t-item item">
-              <h4>Jr Research Assistant — Aggregate Intelligence</h4>
-              <div class="meta">Oct 2024 – May 2025</div>
-              <ul>
-                <li>
-                  Collected and verified data for Northern California High
-                  Technology Directory and Gift, Housewares & Home Textile
-                  Buyers directory.
-                </li>
-                <li>
-                  Collaborated with cross‑functional teams to hit project goals
-                  and improve communication.
-                </li>
-              </ul>
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <div class="timeline-line">
+                <div class="d-flex mb-2">
+                  <div class="timeline-dot"></div>
+                  <div>
+                    <h5 class="mb-1">
+                      Jr Research Assistant — Aggregate Intelligence
+                    </h5>
+                    <div class="text-muted small mb-2">
+                      Oct 2024 – May 2025
+                    </div>
+                    <ul class="small mb-0">
+                      <li>
+                        Collected and verified data for Northern California High
+                        Technology Directory and Gift, Housewares &amp; Home
+                        Textile Buyers directory.
+                      </li>
+                      <li>
+                        Collaborated with cross-functional teams to hit project
+                        goals and improve communication.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Projects -->
-      <section id="projects">
+      <section id="projects" class="py-3">
         <div class="container">
           <h2 class="section-title">Projects</h2>
-          <div class="grid two">
-            <article class="item">
-              <h3>Inventory Management System</h3>
-              <p>
-                Web application for managing store inventory (stock updates,
-                product management).
-              </p>
-              <div class="tagrow">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">PHP</span>
-                <span class="tag">MySQL</span>
+          <div class="row g-3">
+            <!-- GROCYFY Project -->
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">
+                    GROCYFY | GROCERY BILLING SYSTEM
+                  </h5>
+                  <p class="card-text small flex-grow-1">
+                    Built a responsive single-page application (SPA) using
+                    React.js and Vite. Implemented a robust Owner Dashboard for
+                    real-time product management (Add, Edit, Delete, stock
+                    tracking).
+                    <br /><br />
+                    Tech stack: React, Bootstrap.<br />
+                    Database: Firebase.<br />
+                    Libraries: jsPDF.
+                  </p>
+                  <div class="mb-2 small">
+                    <span class="badge text-bg-light border">React</span>
+                    <span class="badge text-bg-light border">Vite</span>
+                    <span class="badge text-bg-light border">Bootstrap</span>
+                    <span class="badge text-bg-light border">Firebase</span>
+                    <span class="badge text-bg-light border">jsPDF</span>
+                  </div>
+                  <a
+                    href="https://grocyfy.vercel.app/"
+                    class="small text-decoration-none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Live Demo &rarr;
+                  </a>
+                </div>
               </div>
-              <p>
-                <a
-                  href="https://github.com/guhan0000/Inventory_mgmnt_system"
-                  target="_blank"
-                  rel="noopener"
-                  >Source Code →</a
-                >
-              </p>
-            </article>
-            <article class="item">
-              <h3>Student Result System</h3>
-              <p>
-                Console app that authenticates students and displays results and
-                total score using JDBC.
-              </p>
-              <div class="tagrow">
-                <span class="tag">Java</span>
-                <span class="tag">JDBC</span>
-                <span class="tag">MySQL</span>
+            </div>
+
+            <!-- Inventory Management System -->
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Inventory Management System</h5>
+                  <p class="card-text small flex-grow-1">
+                    Web application for managing store inventory (stock
+                    updates, product management).
+                  </p>
+                  <div class="mb-2 small">
+                    <span class="badge text-bg-light border">HTML</span>
+                    <span class="badge text-bg-light border">CSS</span>
+                    <span class="badge text-bg-light border">PHP</span>
+                    <span class="badge text-bg-light border">MySQL</span>
+                  </div>
+                  <a
+                    href="https://github.com/guhan0000/Inventory_mgmnt_system"
+                    class="small text-decoration-none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Source Code &rarr;
+                  </a>
+                </div>
               </div>
-              <p>
-                <a
-                  href="https://github.com/guhan0000/StudentResultJDBC"
-                  target="_blank"
-                  rel="noopener"
-                  >Source Code →</a
-                >
-              </p>
-            </article>
+            </div>
+
+            <!-- Student Result System -->
+            <div class="col-md-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Student Result System</h5>
+                  <p class="card-text small flex-grow-1">
+                    Console app that authenticates students and displays results
+                    and total score using JDBC.
+                  </p>
+                  <div class="mb-2 small">
+                    <span class="badge text-bg-light border">Java</span>
+                    <span class="badge text-bg-light border">JDBC</span>
+                    <span class="badge text-bg-light border">MySQL</span>
+                  </div>
+                  <a
+                    href="https://github.com/guhan0000/StudentResultJDBC"
+                    class="small text-decoration-none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Source Code &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Education -->
-      <section id="education">
+      <section id="education" class="py-3">
         <div class="container">
           <h2 class="section-title">Education</h2>
-          <div class="grid two">
-            <div class="item">
-              <h3>Saranathan College of Engineering, Trichy</h3>
-              <p>B.E. in Computer Science and Engineering (2024) — CGPA: 8.2</p>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Saranathan College of Engineering, Trichy
+                  </h5>
+                  <p class="small mb-0">
+                    B.E. in Computer Science and Engineering (2024) — CGPA:
+                    8.2
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="item">
-              <h3>Ideal Matric School</h3>
-              <p>HSC (2020) — 91.83%<br />SSLC (2018) — 91.80%</p>
+
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Ideal Matric School</h5>
+                  <p class="small mb-0">
+                    HSC (2020) — 91.83%<br />
+                    SSLC (2018) — 91.80%
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Certifications & Languages -->
-      <section>
-        <div class="container grid two">
-          <div>
-            <h2 class="section-title">Certifications</h2>
-            <div class="item">
-              <ul>
-                <li>Java Programming — Greens Technologies</li>
-                <li>SQL (Intermediate) — HackerRank</li>
-              </ul>
+      <section class="py-3">
+        <div class="container">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <h2 class="section-title">Certifications</h2>
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <ul class="small mb-0">
+                    <li>Java Programming — Greens Technologies</li>
+                    <li>SQL (Intermediate) — HackerRank</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-          <div>
-            <h2 class="section-title">Languages</h2>
-            <div class="item">
-              <p>English, Tamil</p>
+            <div class="col-md-6">
+              <h2 class="section-title">Languages</h2>
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <p class="small mb-0">English, Tamil</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Achievements -->
-      <section id="achievements">
+      <section id="achievements" class="py-4">
         <div class="container">
-          <h2 class="section-title">Achievements</h2>
-          <div class="item">
-            <ul>
-              <li>3rd in school in XII Examination with 91.8%.</li>
-              <li>Best academic performance award (Grade VI to XII).</li>
-              <li>4‑star silver badge in Java & SQL on HackerRank.</li>
-              <li>
-                Runner‑up in coding competition at Saranathan Engineering
-                College.
-              </li>
-            </ul>
+          <h2 class="section-title mb-3">Achievements</h2>
+
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <ul class="small mb-0">
+                <li>3rd in school in XII Examination with 91.8%.</li>
+                <li>Best academic performance award (Grade VI to XII).</li>
+                <li>4-star silver badge in Java &amp; SQL on HackerRank.</li>
+                <li>
+                  Runner-up in coding competition at Saranathan Engineering
+                  College.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Contact -->
-      <section id="contact">
+      <section id="contact" class="py-3">
         <div class="container">
           <h2 class="section-title">Contact</h2>
-          <div class="grid two">
-            <div class="item">
-              <p>
-                If you'd like to collaborate or have an opportunity that fits my
-                profile, feel free to reach out. I’ll get back to you as soon as
-                I can.
-              </p>
-              <p>
-                📧 <a href="mailto:guhanm0000@gmail.com">guhanm0000@gmail.com</a
-                ><br />
-                📞 <a href="tel:+917708904986">+91 7708904986</a>
-              </p>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <p class="small">
+                    If you'd like to collaborate or have an opportunity that
+                    fits my profile, feel free to reach out. I’ll get back to
+                    you as soon as I can.
+                  </p>
+                  <p class="small mb-0">
+                    📧
+                    <a href="mailto:guhanm0000@gmail.com"
+                      >guhanm0000@gmail.com</a
+                    ><br />
+                    📞
+                    <a href="tel:+917708904986">+91 7708904986</a>
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="item">
-              <p>Profiles:</p>
-              <p>
-                <a
-                  href="https://www.linkedin.com/in/guhan-m-il69/"
-                  target="_blank"
-                  rel="noopener"
-                  >LinkedIn</a
-                >
-                ·
-                <a
-                  href="https://github.com/guhan0000"
-                  target="_blank"
-                  rel="noopener"
-                  >GitHub</a
-                >
-                ·
-                <a
-                  href="https://www.hackerrank.com/profile/guhanm0000"
-                  target="_blank"
-                  rel="noopener"
-                  >HackerRank</a
-                >
-              </p>
+
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <p class="small fw-semibold mb-2">Profiles:</p>
+                  <p class="small mb-0">
+                    <a
+                      href="https://www.linkedin.com/in/guhan-m-il69/"
+                      target="_blank"
+                      rel="noopener"
+                      >LinkedIn</a
+                    >
+                    ·
+                    <a
+                      href="https://github.com/guhan0000"
+                      target="_blank"
+                      rel="noopener"
+                      >GitHub</a
+                    >
+                    ·
+                    <a
+                      href="https://www.hackerrank.com/profile/guhanm0000"
+                      target="_blank"
+                      rel="noopener"
+                      >HackerRank</a
+                    >
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-      <div class="container">
-        © <span id="y">2025</span> Guhan Muthuramalingam · Built with HTML & CSS
+      <div class="container text-center">
+        © <span id="y">2025</span> Guhan Muthuramalingam · Built with
+        Bootstrap
       </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Auto year -->
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
